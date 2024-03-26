@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendering Dynamic Images Using Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="static/styles/main.css">
+</head>
+
+<body>
+    
+    <header>
+        <div></div>
+        <div class="text">University of the West Indies</div>
+        <div></div>
+    </header>
+    
+    <div class="centreBlock">
+        <form class="uploadform" action="{{ url_for('predict') }}" enctype="multipart/form-data" method="POST">
+            <li><input class="uploadslot" type="text" name="glucose_In" placeholder="Enter Glucose Value"></li>
+            <li><input class="uploadslot" type="text" name="insulin_In" placeholder="Enter Insulin Value"></li>
+            <li><input class="uploadslot" type="text" name="skinthicc_In" placeholder="Enter Skin Thickness Value"></li>
+            <li><input class="uploadslot" type="text" name="bmi_In" placeholder="Enter BMI Value"></li>
+            <li><input class="button" class="button" type="submit" value="Upload"></li>
+        </form>
+    </div>
+
+    <div class="table">
+        <table>
+            <tr><td>Glucose</td><td>Insulin</td><td>Skin Thickness</td><td>BMI</td><td>Prediction</td></tr>
+            <tr><td>{{glucose}}</td><td>{{insulin}}</td><td>{{skinThicc}}</td><td>{{bmi}}</td><td>{{prediction}}</td></tr>
+        </table>
+    </div>
+
+    <footer>
+        <div></div>
+        <div class="text">Diabetes Association of Trinidad & Tobago</div>
+        <div></div>
+    </footer>
+</body>
+
+</html>
+<!--{{ url_for('upload_file') }}-->

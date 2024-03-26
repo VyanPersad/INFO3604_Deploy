@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendering Dynamic Images Using Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="static/styles/main.css">
+</head>
+
+<body>
+    
+    <header>
+        <div></div>
+        <div class="text">University of the West Indies</div>
+        <div></div>
+    </header>
+    
+    <div class="centreBlock">
+        <form class="uploadform" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="POST">
+            <input class="uploadslot" name="img" type="file" alt=" " accept="image/*"/>
+            <input class="button" type="submit" value="Upload">
+        </form>
+    
+        <div class="centreImg">
+            <img src="{{ url_for('static', filename=img_path1) }}" alt=" ">
+        </div>
+        <div class="table">
+            <table>
+                <tr><td>Contrast</td><td>Dissimilarity</td><td>Homogeneity</td><td>Energy</td><td>Correlation</td><td>ASM</td></tr>
+                <tr><td>{{CONT}}</td><td>{{DISS}}</td><td>{{HOMO}}</td><td>{{ENER}}</td><td>{{CORR}}</td><td>{{ASM}}</td></tr>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <div></div>
+        <div class="text">Diabetes Association of Trinidad & Tobago</div>
+        <div></div>
+    </footer>
+</body>
+
+</html>
+<!--{{ url_for('upload_file') }}-->
