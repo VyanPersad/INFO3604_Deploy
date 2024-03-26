@@ -4,6 +4,6 @@ scikit-image
 tensorflow
 keras
 scikit-learn
-cv2
+opencv-python
 numpy
 pandas
