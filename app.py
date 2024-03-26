@@ -32,9 +32,10 @@ def upload_file():
     if request.method == 'POST':
         file = request.files['img']
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD'], filename))
-        img = os.path.join(app.config['UPLOAD'], filename)
-        img = cv2.imread(img)
+        #file.save(os.path.join(app.config['UPLOAD'], filename))
+        #img = os.path.join(app.config['UPLOAD'], filename)
+        
+        img = cv2.imread(file)
         lower = np.array([3, 15, 10], dtype="uint8")
         upper = np.array([20, 255, 255], dtype="uint8")
         image = cv2.resize(img, (300, 300))
