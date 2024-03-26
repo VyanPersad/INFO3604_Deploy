@@ -29,10 +29,10 @@ def upload_file():
     ener = ""
     corr = ""
     asm = ""
-    G1 = ""
-    G2 = ""
-    G3 = ""
-    G4 = ""
+    g1 = ""
+    g2 = ""
+    g3 = ""
+    g4 = ""
     
     if request.method == 'POST':
         file = request.files['img']
@@ -104,16 +104,16 @@ def upload_file():
 
         # Convert the list of Gabor features to a numpy array
         gabor_features = np.array(kernels)
-        g1 = gabor_features[0]
-        g2 = gabor_features[1]
-        g3 = gabor_features[2]
-        g4 = gabor_features[3]
-
+        g1 = round(gabor_features[0],4)
+        g2 = round(gabor_features[1],4)
+        g3 = round(gabor_features[2],4)
+        g4 = round(gabor_features[3],4)
+        g5 = round(gabor_features[4],4)
     
     return render_template('index.html', 
                                 img_path1='cropped.png',
                                 CONT=cont,DISS=diss, HOMO=homo,ENER=ener, CORR=corr,ASM=asm,
-                                G1=g1,G2=g2,G3=g3,G4=g4,
+                                G1=g1,G2=g2,G3=g3,G4=g4,G5=g5
                             )
 
 
