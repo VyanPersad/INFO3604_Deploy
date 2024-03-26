@@ -2,10 +2,5 @@ Flask
 Gunicorn
 scikit-image
 tensorflow
-keras.models
-os
-cv2
-numpy
-pandas
-sklearn.model_selection
-sklearn.preprocessing
+keras
+sklearn
