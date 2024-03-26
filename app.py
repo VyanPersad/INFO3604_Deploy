@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-from skimage.feature import graycomatrix
+#from skimage.feature import graycomatrix
 from skimage.feature import graycoprops
 import os
 import cv2
