@@ -22,13 +22,17 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     
-    cont = ""
+    cont = "" 
     diss = ""
     homo = ""
     ener = ""
     corr = ""
     asm = ""
-
+    G1 = ""
+    G2 = ""
+    G3 = ""
+    G4 = ""
+    
     if request.method == 'POST':
         file = request.files['img']
         filename = secure_filename(file.filename)
@@ -87,12 +91,29 @@ def upload_file():
         ener = round(graycoprops(glcm, 'energy').ravel()[0], 4)
         corr = round(graycoprops(glcm, 'correlation').ravel()[0], 4)
         asm = round(graycoprops(glcm, 'ASM').ravel()[0], 4)
+
+        frequencies = [0.1, 0.3, 0.5]
+        kernels = []
+
+        # Generate Gabor filter kernels
+        for frequency in frequencies:
+            for theta in angles:
+                kernel = np.real(gabor(gray_image, frequency, theta=theta))
+                kernels.append(np.mean(kernel))
+
+        # Convert the list of Gabor features to a numpy array
+        gabor_features = np.array(kernels)
+        g1=gabor_features[0]
+        g2=gabor_features[1]
+        g3=gabor_features[2]
+        g4=gabor_features[3]
+
     
     return render_template('index.html', 
                                 img_path1='cropped.png',
-                                CONT=cont,DISS=diss,
-                                HOMO=homo,ENER=ener,
-                                CORR=corr,ASM=asm)
+                                CONT=cont,DISS=diss, HOMO=homo,ENER=ener, CORR=corr,ASM=asm,
+                                G1=g1,G2=g2,G3=g3,G4=g4
+                            )
 
 
 #if __name__ == '__main__':
