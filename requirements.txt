@@ -1,7 +1,7 @@
 Flask
 Gunicorn
 scikit-image
-tensorflow.compat.v1
+tensorflow
 keras.models
 os
 cv2
