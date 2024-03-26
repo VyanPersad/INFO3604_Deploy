@@ -3,4 +3,4 @@ Gunicorn
 scikit-image
 tensorflow
 keras
-sklearn
+scikit-learn
