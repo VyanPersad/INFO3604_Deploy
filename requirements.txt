@@ -1,2 +1,11 @@
 Flask
 Gunicorn
+scikit-image
+tensorflow.compat.v1
+keras.models
+os
+cv2
+numpy
+pandas
+sklearn.model_selection
+sklearn.preprocessing
