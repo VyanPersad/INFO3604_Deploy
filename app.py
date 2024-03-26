@@ -112,7 +112,7 @@ def upload_file():
     return render_template('index.html', 
                                 img_path1='cropped.png',
                                 CONT=cont,DISS=diss, HOMO=homo,ENER=ener, CORR=corr,ASM=asm,
-                                G1=g1,G2=g2,G3=g3,G4=g4
+                                G1=g1,G2=g2,G3=g3,G4=g4,
                             )
 
 
