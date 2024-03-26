@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from skimage.feature import graycomatrix
 from skimage.feature import graycoprops
+from skimage.filters import gabor
 import os
 import cv2
 import numpy as np
@@ -103,10 +104,10 @@ def upload_file():
 
         # Convert the list of Gabor features to a numpy array
         gabor_features = np.array(kernels)
-        g1=gabor_features[0]
-        g2=gabor_features[1]
-        g3=gabor_features[2]
-        g4=gabor_features[3]
+        g1 = gabor_features[0]
+        g2 = gabor_features[1]
+        g3 = gabor_features[2]
+        g4 = gabor_features[3]
 
     
     return render_template('index.html', 
