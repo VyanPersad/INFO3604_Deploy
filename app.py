@@ -34,8 +34,8 @@ def upload_file():
         filename = secure_filename(file.filename)
         #file.save(os.path.join(app.config['UPLOAD'], filename))
         #img = os.path.join(app.config['UPLOAD'], filename)
-        file.save('static/uploads/{filename}')
-        img = 'static/uploads/{filename}'
+        file.save(f'static/uploads/{filename}')
+        img = f'static/uploads/{filename}'
         img = cv2.imread(img)
         lower = np.array([3, 15, 10], dtype="uint8")
         upper = np.array([20, 255, 255], dtype="uint8")
