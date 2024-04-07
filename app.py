@@ -25,7 +25,7 @@ model_2 = load_model(model_path_2)
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
 
-    file_path = 'static\model\Sanitised_Data.csv'
+    file_path = 'static/model/Sanitised_Data.csv'
     df = pd.read_csv(file_path)
     scaler =""
     X = df[['Dissimilarity','ASM','Energy','Gabor5','Gabor6','Gabor7','Gabor8','Gabor9','Gabor10','Gabor11','k-Value']].values
