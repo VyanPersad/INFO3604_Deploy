@@ -39,11 +39,8 @@ def upload_file():
     X_test = scaler.transform(X_test)
     model_2.fit(x=X_train, y=y_train, epochs=250, verbose=0)
     
-    cont = ""
     diss = ""
-    homo = ""
     ener = ""
-    corr = ""
     asm = ""
     g5=""
     g6=""
