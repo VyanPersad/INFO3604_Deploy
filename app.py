@@ -141,7 +141,7 @@ def upload_file():
         # Compute the average value of the K channel
         k_value = np.mean(k)
 
-        patient = np.array([[diss,asm, ener,g5,g6,g7,g8,g9,g10,g11,k_value]])
+        patient = np.array([[diss,asm,ener,g5,g6,g7,g8,g9,g10,g11,k_value]])
         patient_scaled = scaler.transform(patient)
         prediction = model_2.predict(patient_scaled).tolist() 
 
@@ -149,7 +149,6 @@ def upload_file():
     
     return render_template('index.html', 
                                 img_path1='cropped.png',
-                                CONT=cont,DISS=diss, HOMO=homo,ENER=ener, CORR=corr,ASM=asm,
                                 prediction = prediction,
                             )
 
