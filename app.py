@@ -6,7 +6,6 @@ from skimage.filters import gabor
 import os
 import cv2
 import numpy as np
-import math
 import csv
 import pandas as pd
 import tensorflow.compat.v1 as tf 
@@ -111,12 +110,12 @@ def upload_file():
         normed = True
         
         glcm = graycomatrix(gray_image, distances, angles, levels=levels, symmetric=symmetric, normed=normed)        
-        cont = round(mean(graycoprops(glcm, 'contrast').ravel()), 4)
-        diss = round(mean(graycoprops(glcm, 'dissimilarity').ravel()), 4)
-        homo = round(mean(graycoprops(glcm, 'homogeneity').ravel()), 4)
-        ener = round(mean(graycoprops(glcm, 'energy').ravel()), 4)
-        corr = round(mean(graycoprops(glcm, 'correlation').ravel()), 4)
-        asm = round(mean(graycoprops(glcm, 'ASM').ravel()), 4)
+        cont = round(np.mean(graycoprops(glcm, 'contrast').ravel()), 4)
+        diss = round(np.mean(graycoprops(glcm, 'dissimilarity').ravel()), 4)
+        homo = round(np.mean(graycoprops(glcm, 'homogeneity').ravel()), 4)
+        ener = round(np.mean(graycoprops(glcm, 'energy').ravel()), 4)
+        corr = round(np.mean(graycoprops(glcm, 'correlation').ravel()), 4)
+        asm = round(np.mean(graycoprops(glcm, 'ASM').ravel()), 4)
 
         frequencies = [0.1, 0.3, 0.5]
         kernels = []
