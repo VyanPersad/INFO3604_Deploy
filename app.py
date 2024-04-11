@@ -19,7 +19,7 @@ app = Flask(__name__)
 upload_folder = os.path.join('static', 'uploads')
 app.config['UPLOAD'] = upload_folder
 
-model_path_2 = "static\model\my_diabetes_BM.h5"
+model_path_2 = "static/model/my_diabetes_BM.h5"
 model_2 = load_model(model_path_2)
 
 @app.route('/', methods=['GET', 'POST'])
