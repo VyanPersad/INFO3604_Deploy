@@ -18,16 +18,16 @@ app = Flask(__name__)
 upload_folder = os.path.join('static', 'uploads')
 app.config['UPLOAD'] = upload_folder
 
-model_path_2 = "static/model/my_diabetes_BM.h5"
+model_path_2 = "static\model\my_custom_model_final_All_feats.h5"
 model_2 = load_model(model_path_2)
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
 
-    file_path = 'static/model/trimmed_data_2.csv'
+    file_path = 'static\model\data.csv'
     df = pd.read_csv(file_path)
     scaler =""
-    X = df[['Contrast',	'Dissimilarity',	'Homogeneity',	'Energy',	'Correlation',	'ASM','Gabor1','Gabor2','Gabor2','Gabor4','Gabor5','Gabor6','Gabor7','Gabor8','Gabor9','Gabor10','Gabor11','k-Value']].values
+    X = df[['Contrast',	'Dissimilarity','Homogeneity',	'Energy',	'Correlation',	'ASM','Gabor1','Gabor2','Gabor2','Gabor4','Gabor5','Gabor6','Gabor7','Gabor8','Gabor9','Gabor10','Gabor11','k-Value']].values
     y = df["Outcome"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     X_train.shape
@@ -36,7 +36,6 @@ def upload_file():
     scaler.fit(X_train)
     X_train = scaler.transform(X_train)
     X_test = scaler.transform(X_test)
-    #model_2.fit(x=X_train, y=y_train, epochs=250, verbose=0)
     
     cont = ""
     diss = ""
@@ -162,12 +161,16 @@ def upload_file():
         prediction = model_2.predict(patient_scaled).tolist() 
 
         prediction = prediction[0][0]
+        if prediction >= 0.5:
+            outcome = "Potentially At Risk"
+        elif prediction >0.5:
+            outcome = "Potentially Not at Risk"
     
     return render_template('index.html', 
                                 img_path1='cropped.png',
                                 prediction = prediction,
+                                outcome=outcome,
                             )
 
-
-#if __name__ == '__main__':
-#    app.run() 
+if __name__ == '__main__':
+    app.run() 
