@@ -18,16 +18,18 @@ app = Flask(__name__)
 upload_folder = os.path.join('static', 'uploads')
 app.config['UPLOAD'] = upload_folder
 
-model_path_2 = "static\model\my_custom_model_final_All_feats.h5"
+model_path_2 = f'static\model\my_custom_model_final_All_feats.h5'
 model_2 = load_model(model_path_2)
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
 
-    file_path = 'static\model\data.csv'
+    file_path = f'static\model\data.csv'
     df = pd.read_csv(file_path)
     scaler =""
-    X = df[['Contrast',	'Dissimilarity','Homogeneity',	'Energy',	'Correlation',	'ASM','Gabor1','Gabor2','Gabor2','Gabor4','Gabor5','Gabor6','Gabor7','Gabor8','Gabor9','Gabor10','Gabor11','k-Value']].values
+    X = df[['Contrast',	'Dissimilarity','Homogeneity',	'Energy',	'Correlation',	'ASM',
+            'Gabor1','Gabor2','Gabor2','Gabor4','Gabor5','Gabor6','Gabor7','Gabor8','Gabor9',
+            'Gabor10','Gabor11','k-Value']].values
     y = df["Outcome"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     X_train.shape
