@@ -23,23 +23,6 @@
         </div>
     </header>
     
-    <div class="centreBlock">
-        <form class="uploadform" action="{{ url_for('upload_file') }}" enctype="multipart/form-data" method="POST">
-            <input class="uploadslot" name="img" type="file" alt=" " accept="image/*"/>
-            <input class="button" type="submit" value="Upload">
-        </form>
-    
-        <div class="centreImg">
-            <img src="{{ url_for('static', filename=img_path1) }}" alt=" ">
-        </div>
-        <div class="table">
-            <table>
-                <tr><td>{{prediction}}</td></tr>
-                <tr><td>{{outcome}}</td></tr>
-            </table>
-        </div>
-
-    </div>
 
     <footer>
         <div></div>

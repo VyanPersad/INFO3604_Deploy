@@ -21,25 +21,47 @@ input{
     height: 45px;
     vertical-align: auto;
 }
-header, footer{
-    height: 40px;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 2px;
-    grid-row-gap: 5px;
+
+header {
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
-header{
-    margin-bottom: 25px;
+
+.logo {
+    margin-right: 10px; /* Adjust margin as needed */
 }
+
+
 body{
     height: 75%;
     vertical-align: middle;
     margin-top: 15px;
 }
-footer{
-    margin-top: 25px;
+.logo img {
+    height: 40px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add space between logo and text */
+}
+
+/* Style navigation */
+.navigation {
+    display: flex;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 table{
     margin-left: auto;

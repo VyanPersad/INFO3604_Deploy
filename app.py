@@ -8,13 +8,21 @@ import cv2
 import numpy as np
 import csv
 import pandas as pd
-import tensorflow.compat.v1 as tf 
+#import tensorflow.compat.v1 as tf 
 from keras.models import load_model
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
 app = Flask(__name__)
- 
+
+@app.route('/training-section')
+def training_section():
+    return render_template('training_section.html')
+
+@app.route('/about-us')
+def about_us():
+    return render_template('about_us.html')
+
 upload_folder = os.path.join('static', 'uploads')
 app.config['UPLOAD'] = upload_folder
 
@@ -165,7 +173,7 @@ def upload_file():
         prediction = prediction[0][0]
         if prediction >= 0.5:
             outcome = "Potentially At Risk"
-        elif prediction >0.5:
+        elif prediction <0.5:
             outcome = "Potentially Not at Risk"
     
     return render_template('index.html', 
