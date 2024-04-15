@@ -179,7 +179,9 @@ def upload_file():
     return render_template('index.html', 
                                 img_path1='cropped.png',
                                 prediction = prediction,
-                                outcome=outcome,
+                                outcome=outcome,CONT=cont, DISS=diss, HOMO=homo, ENER=ener, CORR=corr, ASM=asm,
+                                G1=g1, G2=g2, G3=g3, G4=g4, G5=g5,
+                                K_VALUE=k_value,
                             )
 
 if __name__ == '__main__':
