@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rendering Dynamic Images Using Flask</title>
+    <title>AN Prediction</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
     <link rel="stylesheet" type="text/css" href="static/styles/main.css">
 </head>
@@ -11,9 +11,16 @@
 <body>
     
     <header>
-        <div></div>
-        <div class="text">University of the West Indies</div>
-        <div></div>
+        <div class="logo">
+            <img src="static/dattlogo.png" alt="Logo">
+        </div>
+        <div class="title">
+            <div class="text">The Diabetes Association of Trinidad and Tobago</div>
+        </div>
+        <div class="navigation">
+            <div class="text"><a class="unique-button" href="{{ url_for('training_section') }}">How to Use</a></div>
+            <div class="text"><a class="unique-button" href="{{ url_for('about_us') }}">About Us</a></div>
+        </div>
     </header>
     
     <div class="centreBlock">
@@ -26,9 +33,20 @@
             <img src="{{ url_for('static', filename=img_path1) }}" alt=" ">
         </div>
         <div class="table">
+<<<<<<< HEAD
             <table>
                 <tr><td>{{prediction}}</td></tr>
                 <tr><td>{{outcome}}</td></tr>
+=======
+            <table> 
+                <tr><td>{{prediction}}</td></tr>
+                <tr><td>{{outcome}}</td></tr>
+                <tr>Features Extracted</tr>
+                <tr><td>Contrast</td><td>Dissimilarity</td><td>Homogeneity</td><td>Energy</td><td>Correlation</td><td>ASM</td></tr>
+                <tr><td>{{CONT}}</td><td>{{DISS}}</td><td>{{HOMO}}</td><td>{{ENER}}</td><td>{{CORR}}</td><td>{{ASM}}</td></tr>
+                <tr><td>Gabor 1</td><td>Gabor 2</td><td>Gabor 3</td><td>Gabor 4</td><td>Gabor 5</td><td>etc...</td> <td>K Value</td></tr>
+                <tr><td>{{G1}}</td><td>{{G2}}</td><td>{{G3}}</td><td>{{G4}}</td><td>{{G5}}</td><td>etc...</td><td>{{K_VALUE}}</td></tr>
+>>>>>>> 5943a0de614ff6e91e43a9292441c85e8d3aaa33
             </table>
         </div>
 
@@ -36,8 +54,14 @@
 
     <footer>
         <div></div>
-        <div class="text">Diabetes Association of Trinidad & Tobago</div>
+        <div class="logo">
+            <img src="static/uwilogo.png" alt="Logo">
+        </div>
+        <div class="footer-title">The University of The West Indies</div>
         <div></div>
+        <div class="logo">
+            <img src="static/uwilogo.png" alt="Logo">
+        </div>
     </footer>
 </body>
 

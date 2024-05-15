@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AN Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="static/styles/main.css">
+</head>
+
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="static/dattlogo.png" alt="Logo">
+        </div>
+        <div class="title">
+            <div class="text">The Diabetes Association of Trinidad and Tobago</div>
+        </div>
+        <div class="navigation">
+            <div class="text"><a class="unique-button" href="{{ url_for('training_section') }}">How to Use</a></div>
+            <div class="text"><a class="unique-button" href="{{ url_for('about_us') }}">About Us</a></div>
+        </div>
+    </header>
+    
+<div class="container-instructions">
+    <div class="instructions">
+        <h2>Instructions</h2>
+        <ol>
+            <li>
+                <h3>Options:</h3>
+                <ol>
+                    <li>1. If you have a photo of the neck (including the upper back) taken already proceed to the section below labaled Using the Web Application.</li>
+                    <li>2. If you do not have the photo The following instructions will be for you.</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Preparation:</h3>
+                <ol>
+                    <li>a. Another person is required for this process (this person will be taking the photo for you).</li>
+                    <li>b. The following instructions will be for the other person.</li>
+                    <li>b. Ensure that the person you are taking the photo is comfortable and properly positioned, preferably sitting, or standing upright.</li>
+                    <li>c. Provide adequate lighting in the room to ensure clear visibility of the neck area.</li>
+                    <li>d. Make sure the person's hair is pulled away from the neck to avoid obstruction.</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Camera Setup:</h3>
+                <ol>
+                    <li>a. Open the camera application on your cell phone.</li>
+                    <li>b. Ensure that the camera lens is clean and free from any smudges or dirt.</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Capturing the Photo:</h3>
+                <ol>
+                    <li>a. Position the camera at the level of the patient's neck, parallel to the ground.</li>
+                    <li>b. Ensure the entire area of interest is centered and clearly visible in the camera frame.</li>
+                    <li>c. Once the area is in focus and properly framed, gently press the shutter button to take the photo.</li>
+                    <li>d. Avoid sudden movements while capturing the image to prevent blurring</li>
+                    <li>e. Review and Retake (if necessary):</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Using the Web Application:</h3>
+                <ol>
+                    <li>a. Proceed to the homepage.</li>
+                    <li>b. Press the Browse button and select the picture that was now taken.</li>
+                    <li>c. Proceed to click the upload button.</li>
+                    <li>d. Await for Prediction</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<footer>
+    <div></div>
+    <div class="logo">
+        <img src="static/uwilogo.png" alt="Logo">
+    </div>
+    <div class="footer-title">The University of The West Indies</div>
+    <div></div>
+    <div class="logo">
+        <img src="static/uwilogo.png" alt="Logo">
+    </div>
+</footer>
+</body>
+</html>

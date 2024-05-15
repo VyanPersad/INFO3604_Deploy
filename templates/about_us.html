@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AN Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="static/styles/main.css">
+</head>
+
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="static/dattlogo.png" alt="Logo">
+        </div>
+        <div class="title">
+            <div class="text">The Diabetes Association of Trinidad and Tobago</div>
+        </div>
+        <div class="navigation">
+            <div class="text"><a class="unique-button" href="{{ url_for('training_section') }}">How to Use</a></div>
+            <div class="text"><a class="unique-button" href="{{ url_for('about_us') }}">About Us</a></div>
+        </div>
+    </header>
+    
+<div class="container-aboutus">
+    <div class="aboutus">
+        <h2>About Us</h2>
+        <ol>
+            <li>
+                <h3>Diabetes Association of Trinidad and Tobago</h3>
+                <ol>
+                    <li>The Diabetes Association of Trinidad and Tobago was founded on July 2, 1988 and incorporated by an Act of Parliament (Act No. 15 of 1989) as a charitable, voluntary, community organization.</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Our Mission:</h3>
+                <ol>
+                    <li>To promote health in people with diabetes and to prevent or at least delay the onset of diabetes in those at risk through education, research and advocacy</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Our Vision:</h3>
+                <ol>
+                    <li>To serve as the most resourceful support group for the nation in prevention, education and management, awareness and advocacy of diabetes throughout the lifespan</li>
+                </ol>
+            </li>
+            <li>
+                <h3>Contact Us:</h3>
+                <ol>
+                    <li>Address - 10-12 Success St, Chaguanas</li>
+                    <li>Phone - (868) 607 - 3286</li>
+                    <li>Email - info@diabetes-tt.org</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<footer>
+    <div></div>
+    <div class="logo">
+        <img src="static/uwilogo.png" alt="Logo">
+    </div>
+    <div class="footer-title">The University of The West Indies</div>
+    <div></div>
+    <div class="logo">
+        <img src="static/uwilogo.png" alt="Logo">
+    </div>
+</footer>
+</body>
+</html>
