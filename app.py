@@ -110,6 +110,7 @@ def upload_file():
         normed = True
         
         glcm = graycomatrix(gray_image, distances, angles, levels=levels, symmetric=symmetric, normed=normed)        
+
         cont = round(np.mean(graycoprops(glcm, 'contrast').ravel()), 4)
         diss = round(np.mean(graycoprops(glcm, 'dissimilarity').ravel()), 4)
         homo = round(np.mean(graycoprops(glcm, 'homogeneity').ravel()), 4)
@@ -162,10 +163,15 @@ def upload_file():
         prediction = model_2.predict(patient_scaled).tolist() 
 
         prediction = prediction[0][0]
-    
+        if prediction >= 0.5:
+            outcome = "Potentially Positive"
+        elif prediction < 0.5:
+            outcome = "Potentially Negative"
+
     return render_template('index.html', 
                                 img_path1='cropped.png',
                                 prediction = prediction,
+                                outcome = outcome,
                             )
 
 
